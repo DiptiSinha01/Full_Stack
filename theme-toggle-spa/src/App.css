@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.app {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.app.light {
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  color: #222;
+}
+
+.app.dark {
+  background: linear-gradient(135deg, #1e1e2f, #121212);
+  color: #f5f5f5;
+}
+
+.card {
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.app.dark .card {
+  background: rgba(30, 30, 47, 0.85);
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.7rem 1.3rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
