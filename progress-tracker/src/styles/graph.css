@@ -1,0 +1,220 @@
+.graph-box {
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.recharts-area {
+  transition: all 0.3s ease;
+}
+
+.graph-box {
+  padding: 18px 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #ffffff;
+}
+.graph-inner {
+  width: 100%;
+  max-width: 100%;
+  height: 240px;
+}
+/* Inputs */
+input {
+  background: var(--input-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Goal chips (tags) */
+.goal-chip {
+  background: var(--card);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+/* GRAPH STATS */
+.graph-stats {
+  display: flex;
+  gap: 12px;
+}
+
+.graph-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+.graph-stat-item.best {
+  border-color: var(--success);
+  background: var(--success-soft);
+}
+
+.graph-stat-item.worst {
+  border-color: #fca5a5;
+  background: #fee2e2;
+}
+
+[data-theme="dark"] .graph-stat-item.worst {
+  background: rgba(252, 165, 165, 0.1);
+  border-color: #f87171;
+}
+
+.stat-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* CUSTOM TOOLTIP */
+.graph-tooltip {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .graph-tooltip {
+  background: #0f1d3d;
+  border-color: #1a2d5a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip-day {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.tooltip-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* WEEKLY STATS GRID - No card styling, informational only */
+.weekly-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.weekly-stat-card {
+  background: transparent;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .weekly-stat-card {
+  background: transparent;
+  border-color: rgba(6, 182, 212, 0.2);
+}
+
+.weekly-stat-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 16px rgba(6, 182, 212, 0.2);
+  transform: translateY(-2px);
+}
+
+.week-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 8px;
+}
+
+.week-number {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.week-trend {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.trend-up {
+  color: var(--success);
+}
+
+.trend-down {
+  color: #ef4444;
+}
+
+.trend-flat {
+  color: var(--text-muted);
+}
+
+.week-stat {
+  margin-bottom: 10px;
+}
+
+.week-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 2px;
+}
+
+.week-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.week-bar {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .week-bar {
+  background: #1a2d5a;
+}
+
+.week-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--success));
+  transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* RECHARTS CUSTOMIZATION */
+.recharts-surface {
+  filter: none;
+}
+
+.recharts-reference-line-label {
+  font-weight: 600;
+}
+
