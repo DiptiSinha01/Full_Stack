@@ -1,0 +1,183 @@
+/* ================= GLOBAL & LAYOUT ================= */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh; 
+  background-color: #f1f5f9; /* Single solid background color */
+  /* Ensures all text defaults to black */
+  color: #000000; 
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Container for perfect centering on the page */
+.profile-container, .atlys-root {
+  max-width: 1200px;
+  /* margin: 0 auto; */
+  margin-left: 350px;
+  margin-top: 0px;
+  /* margin-bottom: 0px; */
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontal center */
+  justify-content: center; /* Vertical center if needed */
+  text-align: center; /* Text center */
+}
+
+/* ================= TEXT COLOR OVERRIDE ================= */
+h1, h2, h3, p, span, div {
+  color: #000000 !important; /* Forces all text to black */
+}
+
+/* ================= CARD STYLE ================= */
+.project-card, .atlys-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 350px;
+  background-color: #ffffff; 
+  border-radius: 16px;
+  border: 1px solid #d1d5db; /* Slightly darker border for definition */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content inside the card */
+}
+
+.project-card:hover, .atlys-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* ================= GRIDS (Single Line) ================= */
+.projects-grid, .atlys-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; /* Forces all cards in one line */
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+/* ================= ELEMENTS ================= */
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  margin-bottom: 20px;
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Centering the skill/tag bubbles */
+.skills, .atlys-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 15px;
+  padding: 10px;
+}
+
+.skills span, .atlys-tags span {
+  background: #e5e7eb; /* Light grey background for black text to pop */
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #d1d5db;
+}
+
+/* Header spacing */
+.atlys-header, .profile-header {
+  margin-bottom: 40px;
+}
+/* ================= DASHBOARD (ATLYS STYLE) ================= */
+.atlys-root {
+  max-width: 1200px;
+  /* margin: 40px auto; "auto" handles the left/right centering of the container */
+  padding: 0 20px;
+  padding-left: 200px;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the header and the grid horizontally */
+}
+
+/* Header */
+.atlys-header {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.atlys-header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1e1b4b;
+  margin-bottom: 12px;
+}
+
+.atlys-header p {
+  font-size: 1.1rem;
+  color: #64748b;
+}
+
+/* Skills Grid - This is where the alignment happens */
+.atlys-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* This shifts the cards to the center */
+  gap: 24px;
+  width: 100%;           /* Ensures it uses the full width available to center items */
+  padding: 0;            /* REMOVED: padding-left: 460px */
+  box-sizing: border-box;
+}
+
+/* Skill Card */
+.atlys-card {
+  width: 300px;          /* Fixed width helps maintain symmetry */
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.atlys-card:hover {
+  transform: translateY(-8px);
+  border-color: #6366f1;
+}
+
+.atlys-card h3 {
+  font-size: 1.2rem;
+  color: #312e81;
+  margin-bottom: 18px;
+  border-left: 4px solid #6366f1;
+  padding-left: 12px;
+}
+
+/* Skill Pills */
+.atlys-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.atlys-tags span {
+  background: #f5f3ff;
+  color: #4f46e5;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
