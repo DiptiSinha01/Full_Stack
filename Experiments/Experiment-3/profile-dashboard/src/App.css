@@ -3,25 +3,26 @@ body, html {
   margin: 0;
   padding: 0;
   width: 100%;
-  min-height: 100vh; 
-  background-color: #f1f5f9; /* Single solid background color */
-  /* Ensures all text defaults to black */
-  color: #000000; 
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa, #c3dfe6);
+  color: #2d3748;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Container for perfect centering on the page */
-.profile-container, .atlys-root {
+.profile-container, .dashboard-root {
   max-width: 1200px;
-  /* margin: 0 auto; */
-  margin-left: 350px;
-  margin-top: 0px;
-  /* margin-bottom: 0px; */
-  padding: 60px 20px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center; /* Horizontal center */
-  justify-content: center; /* Vertical center if needed */
   text-align: center; /* Text center */
 }
 
@@ -30,25 +31,20 @@ h1, h2, h3, p, span, div {
   color: #000000 !important; /* Forces all text to black */
 }
 
-/* ================= CARD STYLE ================= */
-.project-card, .atlys-card {
-  flex: 1;
-  min-width: 300px;
-  max-width: 350px;
-  background-color: #ffffff; 
-  border-radius: 16px;
-  border: 1px solid #d1d5db; /* Slightly darker border for definition */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centers content inside the card */
+/* ================= UPDATED CARD STYLE ================= */
+.project-card, .dashboard-card {
+  padding: 15px;
+  margin: 10px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.project-card:hover, .atlys-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+.project-card:hover, .dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* ================= GRIDS (Single Line) ================= */
@@ -103,11 +99,12 @@ h1, h2, h3, p, span, div {
 }
 /* ================= DASHBOARD (ATLYS STYLE) ================= */
 .atlys-root {
-  max-width: 1200px;
-  /* margin: 40px auto; "auto" handles the left/right centering of the container */
-  padding: 0 20px;
-  padding-left: 200px;
-  margin-top: 5px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 32px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center; /* Centers the header and the grid horizontally */
@@ -115,69 +112,324 @@ h1, h2, h3, p, span, div {
 
 /* Header */
 .atlys-header {
-  margin-bottom: 50px;
   text-align: center;
+  margin-bottom: 40px;
 }
 
 .atlys-header h1 {
-  font-size: 2.8rem;
-  font-weight: 800;
-  color: #1e1b4b;
-  margin-bottom: 12px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #4caf50;
+  margin-bottom: 8px;
 }
 
 .atlys-header p {
-  font-size: 1.1rem;
-  color: #64748b;
+  font-size: 0.95rem;
+  color: #607d8b;
 }
 
 /* Skills Grid - This is where the alignment happens */
 .atlys-grid {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* This shifts the cards to the center */
-  gap: 24px;
-  width: 100%;           /* Ensures it uses the full width available to center items */
-  padding: 0;            /* REMOVED: padding-left: 460px */
-  box-sizing: border-box;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px;
 }
 
 /* Skill Card */
 .atlys-card {
-  width: 300px;          /* Fixed width helps maintain symmetry */
+  flex: 0 0 auto;
+  width: 300px;
   background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 20px;
   padding: 24px;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .atlys-card:hover {
-  transform: translateY(-8px);
-  border-color: #6366f1;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.14);
 }
 
 .atlys-card h3 {
-  font-size: 1.2rem;
-  color: #312e81;
-  margin-bottom: 18px;
-  border-left: 4px solid #6366f1;
-  padding-left: 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #4caf50;
+  margin-bottom: 14px;
 }
 
 /* Skill Pills */
 .atlys-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
 }
 
 .atlys-tags span {
-  background: #f5f3ff;
-  color: #4f46e5;
+  background: #e0f2f1;
+  color: #1e293b;
   padding: 6px 14px;
-  border-radius: 8px;
+  border-radius: 999px;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 500;
 }
+
+/* ================= COLOR DISCIPLINE ================= */
+.atlys-header h1 {
+  color: #1e88e5; /* Keep blue for headings */
+}
+
+.atlys-tags span {
+  background-color: #e3f2fd; /* Lighter blue for pills */
+  color: #0288d1;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.atlys-tags span:hover {
+  background-color: #bbdefb; /* Slightly darker on hover */
+}
+
+.tab-button {
+  background-color: #f0f0f0;
+  color: #555;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-button.active {
+  background-color: #0288d1;
+  color: white;
+  border-color: #0288d1;
+}
+
+.tab-button:hover {
+  background-color: #e0f7fa;
+  color: #0288d1;
+}
+
+.tab-content {
+  text-align: center;
+}
+
+.tab-content h2 {
+  font-size: 24px;
+  color: #0288d1;
+  margin-bottom: 10px;
+}
+
+.tab-content p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* ================= SINGLE-PAGE DASHBOARD ================= */
+.dashboard-root {
+  padding: 40px;
+  background: linear-gradient(135deg, #e3f2fd, #f1f8e9);
+  font-family: 'Arial', sans-serif;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+  font-size: 36px;
+  color: #1565c0;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.dashboard-header p {
+  font-size: 18px;
+  color: #37474f;
+  margin: 0;
+}
+
+.dashboard-section {
+  margin-bottom: 40px;
+}
+
+.dashboard-section h2 {
+  font-size: 24px;
+  color: #1e88e5;
+  margin-bottom: 10px;
+}
+
+.dashboard-section p {
+  font-size: 16px;
+  color: #546e7a;
+  margin-bottom: 20px;
+}
+
+.dashboard-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  background-color: #e3f2fd;
+}
+
+.dashboard-card h3 {
+  font-size: 20px;
+  color: #1565c0;
+  margin-bottom: 10px;
+}
+
+.skill-level {
+  font-size: 14px;
+  color: #1e88e5;
+  font-weight: bold;
+}
+
+.impact-statement {
+  font-size: 12px;
+  color: #546e7a;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.dashboard-section {
+  margin-bottom: 40px;
+}
+
+.dashboard-section h2 {
+  border-bottom: 2px solid #1e88e5;
+  padding-bottom: 5px;
+}
+
+.dashboard-card:hover h3 {
+  color: #0d47a1;
+}
+
+/* ================= VIEW PROJECT BUTTON ================= */
+.view-project-button {
+  background-color: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.view-project-button a {
+  text-decoration: none;
+  color: white;
+}
+
+.view-project-button:hover {
+  background-color: #0277bd;
+}
+
+/* ================= TECH STACK TAGS ================= */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.tech-tag {
+  background: #edf2f7;
+  color: #2d3748;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid #cbd5e0;
+}
+
+/* ================= SKILL LEVEL BADGES ================= */
+.skill-level {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.skill-level.advanced {
+  color: #38a169; /* Green */
+}
+
+.skill-level.intermediate {
+  color: #d69e2e; /* Yellow */
+}
+
+.skill-level.beginner {
+  color: #e53e3e; /* Red */
+}
+
+/* ================= SECTION HEADINGS ================= */
+.section-heading {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #2d3748;
+}
+
+.section-heading .accent-bar {
+  width: 6px;
+  height: 24px;
+  background-color: #3182ce;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+/* ================= HORIZONTAL LAYOUT ================= */
+.profile-container {
+  flex-direction: row;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.projects-grid {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.project-card {
+  margin: 10px;
+}
+
