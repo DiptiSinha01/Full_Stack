@@ -1,0 +1,165 @@
+/* ================= GLOBAL ================= */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+}
+
+/* ================= DASHBOARD ROOT ================= */
+
+.dashboard-root {
+  width: 100%;
+  padding: 60px 5%;
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
+/* ================= HEADER ================= */
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.dashboard-header h1 {
+  font-size: 44px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00f5a0, #00d9f5);
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.dashboard-header p {
+  font-size: 18px;
+  opacity: 0.85;
+}
+
+/* ================= SECTION ================= */
+
+.dashboard-section {
+  margin-bottom: 90px;
+  text-align: center;
+}
+
+.section-heading {
+  display: inline-flex;
+  align-items: center;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.accent-bar {
+  width: 6px;
+  height: 26px;
+  background: linear-gradient(to bottom, #00f5a0, #00d9f5);
+  margin-right: 12px;
+  border-radius: 4px;
+}
+
+.dashboard-section p {
+  opacity: 0.8;
+  margin-bottom: 35px;
+}
+
+/* ================= GRID (HORIZONTAL LAYOUT) ================= */
+
+.dashboard-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* ================= CARD ================= */
+
+.dashboard-card {
+  width: 300px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 28px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  text-align: center;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 245, 160, 0.25);
+  border: 1px solid rgba(0, 245, 160, 0.6);
+}
+
+.dashboard-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+/* ================= SKILL LEVEL TAG ================= */
+
+.skill-level {
+  display: inline-block;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+.skill-level.advanced {
+  background: rgba(0, 255, 170, 0.2);
+  color: #00ffb3;
+}
+
+.skill-level.intermediate {
+  background: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+}
+
+.skill-level.beginner {
+  background: rgba(255, 80, 80, 0.2);
+  color: #ff6b6b;
+}
+
+/* ================= IMPACT TEXT ================= */
+
+.impact-statement {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* ================= LOADING SCREEN ================= */
+
+.loading-screen {
+  position: fixed;          /* breaks out of parent container */
+  top: 0;
+  left: 0;
+  width: 100vw;             /* full viewport width */
+  height: 100vh;            /* full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111827;      /* your loading color */
+  color: white;
+  font-size: 26px;
+  font-weight: 600;
+  z-index: 9999;            /* stays above everything */
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dashboard-header h1 {
+    font-size: 34px;
+  }
+}
